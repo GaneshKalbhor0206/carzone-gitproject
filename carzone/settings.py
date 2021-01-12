@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'carzone_db',
+        'HOST': 'localhost',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'PORT': 3306
     }
 }
 
@@ -125,3 +129,8 @@ if DEBUG:
        ]
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+#media settings- photo field from models for that not showing photo so that add this settings
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
